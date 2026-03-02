@@ -1,3 +1,5 @@
+import 'package:tp1_dart/Commande.dart';
+
 class Client {
   String name;
   String prenom;
