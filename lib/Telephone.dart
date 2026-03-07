@@ -16,4 +16,15 @@ class Telephone extends Produit {
   String getDetail() {
     return "Systeme d'exploitation: $se, La taille: $taille";
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'type': 'Telephone',
+      'id': id,
+      'name': name,
+      'prixUnitaire': prixUnitaire,
+      'SE': se,
+      'taille': taille,
+    };
+  }
 }

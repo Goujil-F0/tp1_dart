@@ -14,4 +14,14 @@ class Accessoire extends Produit {
   String getDetail() {
     return "Catégorie: $categorie";
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'type': 'Accessoire',
+      'id': id,
+      'name': name,
+      'prixUnitaire': prixUnitaire,
+      'categorie': categorie,
+    };
+  }
 }

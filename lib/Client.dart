@@ -12,6 +12,15 @@ class Client {
     required this.prenom,
     required this.tlphn,
     required this.email,
-    this.historique= const [],
+    this.historique = const [],
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'prenom': prenom,
+      'tlphn': tlphn,
+      'email': email,
+    };
+  }
 }

@@ -18,8 +18,17 @@ class Commande {
   double calculerTotalCommande() {
     double total = 0;
     for (var ligne in lignes) {
-      total += ligne.calculerSousTotal();                                                 
+      total += ligne.calculerSousTotal();
     }
     return total;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'Id': id,
+      'Client': client.toJson(),
+      'Statut': statut.name,
+      'Lignes': lignes.map((l) => l.toJson()).toList(),
+    };
   }
 }

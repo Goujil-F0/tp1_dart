@@ -9,4 +9,11 @@ class Lignecommande {
   double calculerSousTotal() {
     return produit.prixUnitaire * qte;
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'produit': produit.toJson(),
+      'qte': qte,
+    };
+  }
 }
