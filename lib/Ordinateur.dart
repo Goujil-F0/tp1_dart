@@ -16,4 +16,16 @@ class Ordinateur extends Produit {
   String getDetail() {
     return "CPU: $processeur, RAM: $ram";
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'type': 'Ordinateur',
+      'id': id,
+      'name': name,
+      'prixUnitaire': prixUnitaire,
+      'processeur': processeur,
+      'ram': ram,
+
+    };
+  }
 }

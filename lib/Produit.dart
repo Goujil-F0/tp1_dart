@@ -11,4 +11,7 @@ abstract class Produit {
 
   //Methode abstraite
   String getDetail();
+
+  Map<String, dynamic> toJson();
+  
 }
