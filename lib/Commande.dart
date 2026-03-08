@@ -15,6 +15,15 @@ class Commande {
     this.lignes = const [],
   });
 
+  factory Commande.fromJson(Map<String, dynamic> json) {
+    return Commande(
+      id: json['Id'],
+      client: Client.fromJson(json['Client']),
+      statut: StatutCommande.values.firstWhere((e) => e.name == json['Statut']),
+      lignes: (json['Lignes'] as List).map((l)=>Lignecommande.fromJson(l)).toList(),//transforme txt en enum
+      );
+  }
+
   double calculerTotalCommande() {
     double total = 0;
     for (var ligne in lignes) {

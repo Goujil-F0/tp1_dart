@@ -10,6 +10,16 @@ class Accessoire extends Produit {
     required this.categorie,
   }) : super(id: id, name: name, prixUnitaire: prixUnitaire);
 
+  factory Accessoire.fromJson(Map<String, dynamic> json) {
+    return Accessoire(
+      id: json['id'],
+      name: json['name'],
+      prixUnitaire: json['prixUnitaire'].toDouble(),
+      categorie: json['categorie'],
+    );
+  }
+
+
   @override
   String getDetail() {
     return "Catégorie: $categorie";

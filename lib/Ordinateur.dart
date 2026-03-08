@@ -12,6 +12,17 @@ class Ordinateur extends Produit {
     required this.ram,
   }) : super(id: id, name: name, prixUnitaire: prixUnitaire);
 
+  factory Ordinateur.fromJson(Map<String, dynamic> json) {
+    return Ordinateur(
+      id: json['id'],
+      name: json['name'],
+      prixUnitaire: json['prixUnitaire'].toDouble(),
+      processeur: json['processeur'],
+      ram: json['ram'].toDouble(),
+    );
+  }
+
+
   @override
   String getDetail() {
     return "CPU: $processeur, RAM: $ram";

@@ -10,6 +10,13 @@ class Lignecommande {
     return produit.prixUnitaire * qte;
   }
 
+  factory Lignecommande.fromJson(Map<String, dynamic> json) {
+    return Lignecommande(
+      produit: Produit.fromJson(json['produit']),
+      qte: json['qte'],
+    );
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'produit': produit.toJson(),

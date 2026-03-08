@@ -15,6 +15,15 @@ class Client {
     this.historique = const [],
   });
 
+  factory Client.fromJson(Map<String, dynamic> json) {
+  return Client(
+    name: json['name'],
+    prenom: json['prenom'],
+    tlphn: json['tlphn'],
+    email: json['email'],
+  );
+}
+
   Map<String, dynamic> toJson() {
     return {
       'name': name,
